@@ -26,7 +26,12 @@ client.on('ready', () => {
 client.on("messageDelete",async (message)=>{
     const user = message.author.username +"#"+ message.author.discriminator
 
-    message.channel.send(`${user} heeft net een bericht met de message content: ${message.content}`);
+    message.channel.send(`${user} \n heeft net een bericht met de message content(s): ${message.content}`);
+
+    // loop trough the attachments and repost them
+    message.attachments.map((j)=>{
+        message.channel.send(j.attachment)
+    })
 })
 
 client.login(process.env.token);
