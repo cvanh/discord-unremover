@@ -10,9 +10,18 @@ const client = new Discord.Client({"intents":[
   ]}); 
 require("dotenv").config()
 
-client.on("ready",()=>{
-    console.log("beep boop beep my systems have started up");
-})
+client.on('ready', () => {
+    console.log(`ingelogd als ${client.user.tag}`);
+
+    client.user.setPresence({
+        status: 'online',
+        activity: {
+            name: "https://github.com/cvanh/discord-unremover",
+            type: "PLAYING"
+        }
+    });
+});
+
 
 client.on("messageDelete",async (message)=>{
     const user = message.author.username +"#"+ message.author.discriminator
