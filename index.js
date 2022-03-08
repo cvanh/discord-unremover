@@ -33,3 +33,4 @@ client.on("messageDelete",async (message)=>{
 })
 
 client.login(process.env.TOKEN);
+console.log("kaas")
