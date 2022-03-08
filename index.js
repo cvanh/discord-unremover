@@ -33,4 +33,4 @@ client.on("messageDelete",async (message)=>{
     })
 })
 
-client.login(process.env.token);
+client.login(process.env.TOKEN);
