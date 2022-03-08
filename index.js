@@ -22,7 +22,6 @@ client.on('ready', () => {
     });
 });
 
-
 client.on("messageDelete",async (message)=>{
     const user = message.author.username +"#"+ message.author.discriminator
     message.channel.send(`${user} \nheeft net een bericht met de message content(s): ${message.content}`);
